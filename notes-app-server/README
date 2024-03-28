@@ -1,0 +1,30 @@
+// this is note-app in react+nodejs
+to setup backend in nodejs we need
+
+npm init
+npm i ts-node typescript nodemon @types/cors @types/express @types/node --save-dev
+npm i @prisma/client cors express prisma
+npx tsc --init
+
+in package.json
+"start": "npx nodemon"
+
+server run: curl localhost:5000/api/notes
+// for database connection: postgress
+
+use elephansql - choose free database
+create account;
+create .env file
+give database url from elaphantSql
+to connect with database , use prisma by giving command - npx prisma init
+create model in prisma schema file and push to database using(it will give client to connect with our code) - npx prisma db push
+now create prisma client and use in api in index.ts file
+
+//query to insert 
+INSERT INTO "public"."Note" (title, content)
+VALUES ('test title', 'test content');
+
+//to select
+SELECT * FROM "public"."Note";
+
+//instead of curl to see api response we can use thunder client application in vscode
